@@ -12,18 +12,18 @@ class Book extends Model
 {
     use HasFactory;
 
-    // public function authors()
-    // {
-    //     return $this->belongsToMany(Author::class);
-    // }
+    public function authors()
+    {
+        return $this->belongsToMany(Author::class);
+    }
 
     // public function categories()
     // {
     //     return $this->belongsToMany(Category::class);
     // }
 
-    // public function publishers()
-    // {
-    //     return $this->belongsToMany(Publisher::class);
-    // }
+    public function publishers()
+    {
+        return $this->belongsToMany(Publisher::class);
+    }
 }

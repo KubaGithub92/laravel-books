@@ -1,5 +1,3 @@
-
-
 @extends('layouts\main')
 @section('content')
      <h1>Authors</h1>

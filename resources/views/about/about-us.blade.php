@@ -1,4 +1,7 @@
-@extends('layouts\main')
+@extends('layouts\main', [
+  'title' => "About",
+  'current_menu_item' =>'register'
+])
 
 @section('content')
      <h1>About us</h1>

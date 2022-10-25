@@ -1,4 +1,7 @@
-@extends('layouts\main')
+@extends('layouts\main', [
+  'title' => "Home",
+  'current_menu_item' =>'register'
+])
 
 @section('content')
 
@@ -16,10 +19,30 @@
       @endif
       
       <div id='partners'></div>
-      <div id="latest-books" class="main-container"></div>
+      <div id="latest-books" class="main-container">
+      </div>
 
-      @viteReactRefresh
-      @vite('resources/js/partners.jsx')
-      @vite('resources/js/latest-books.js')
+        
+        @viteReactRefresh
+        @vite('resources/js/partners.jsx')
+        @vite('resources/js/latest-books.js')
 
+      <h2>Crime Books</h2>
+      <div class="main-container">
+        @foreach ($crime_books as $book)
+        {{-- {{dd($crime_books)}} --}}
+        <div class="book-container">
+          <h3>{{$book->title}}</h2>
+          <div class="content-container">
+            <img src="{{$book->image}}" alt="cover of a book" />
+            <div>
+              <div class="author">{{ $book->authors->pluck('name')->join(', ') }}</div>
+              <div class="author">published by {{ $book->publishers->pluck('name')->join(', ')}}</div>
+              <div class="description">{!! $book->description !!}</div>
+            </div>
+          </div>
+        </div>
+        
+        @endforeach
+      </div>
 @endsection

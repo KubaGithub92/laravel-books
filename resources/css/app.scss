@@ -7,7 +7,7 @@ html {
 }
 
 body {
-    margin: 0;
+    margin: 0 auto;
 }
 
 h3 {
@@ -20,15 +20,20 @@ img {
 }
 
 .main-container {
+    width: 90%;
     display: grid;
     grid-template-columns: 1fr 1fr;
+
     gap: 1rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
 }
 
 .book-container {
     width: 90%;
-    border: 1px solid #000;
+    // border: 1px solid #000;
     padding: 1rem;
+    box-shadow: 0px 0px 20px -3px rgba(50, 50, 50);
 }
 .content-container {
     display: flex;
@@ -40,4 +45,8 @@ img {
         display: flex;
         flex-direction: column;
     }
+}
+.author {
+    font-weight: 700;
+    margin-bottom: 10px;
 }
