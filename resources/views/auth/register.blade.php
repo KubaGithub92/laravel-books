@@ -4,11 +4,7 @@
 
 @section('content')
 
-@if ($errors->count())
-  @foreach ($errors->all() as $error)
-      <div>{{$error}}</div>
-  @endforeach
-@endif
+@include('common.errors')
 
 <form action="{{ route('register') }}" method="post">
  
